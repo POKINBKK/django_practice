@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Createpost</title>
+</head>
+<body>
+<form method="POST" action="{% url 'createpost' %}">
+  {% csrf_token %}
+  <div>
+    <div>{{ form.topic.label }}</div>
+    <div>{{ form.topic }}</div>
+    <div>{{ form.topic.help_text }}</div>
+    <div>{{ form.topic.errors }}</div>
+
+    <div>{{ form.story.label }}</div>
+    <div>{{ form.story }}</div>
+    <div>{{ form.story.help_text }}</div>
+    <div>{{ form.story.errors }}</div>
+
+    <div>{{ form.date.label }}</div>
+    <div>{{ form.date }}</div>
+    <div>{{ form.date.help_text }}</div>
+    <div>{{ form.date.errors }}</div>
+
+    <div>{{ form.like.label }}</div>
+    <div>{{ form.like }}</div>
+    <div>{{ form.like.help_text }}</div>
+    <div>{{ form.like.errors }}</div>
+
+    <div>{{ form.genre.label }}</div>
+    <div>{{ form.genre }}</div>
+    <div>{{ form.genre.help_text }}</div>
+    <div>{{ form.genre.errors }}</div>
+    <br>
+    {{ formset.as_p }}
+    <br>
+    <input type="submit" value="CREATE">
+  </div>
+</form>
+  <div><a href="{% url 'index' %}">BACK</a></div>
+</body>
+</html>
